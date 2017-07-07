@@ -1,22 +1,44 @@
-const BntNext = document.getElementById("nextBtn");
-const BntBack = document.getElementById("backBtn");
-const Cstep1 = document.getElementById("#step1");
-const Cstep2 = document.getElementById("#step2");
-const Cstep3 = document.getElementById("#step3");
+var BntNext = document.getElementById("nextBtn");
+var BntBack = document.getElementById("backBtn");
+var Cstep1 = document.getElementById("step1");
+var Cstep2 = document.getElementById("step2");
+var Cstep3 = document.getElementById("step3");
+var i =1 ;
 function next(){
+  if(i === 1){
+      Cstep2.className += ' active';
+      i = i +1 ;
+      alert(i);
+  }
+  else {
+    if(i === 2){
+    Cstep3.className += ' active';
+    i = i +1 ;
+  }else{
+    if(i === 3)
+    {
+      alert("hoàn thành");
+      return;
+    }
+  }
+}
+}
+function back(){
+  if(i === 3){
+      Cstep3.className -= ' active';
+      i = i -1 ;
+      alert(i);
+  }
+  else {
+    if(i === 2){
+    Cstep2.className -= ' active';
+    i = i -1 ;
+  }else{
+    if(i === 1)
+    {
 
-  let content = document.getElementsByClassName('active').textContent;
-  alert(content);
-  switch (content) {
-    case step1:
-      Cstep2.className += "active";
-      break;
-    case step2:
-      Cstep3.className += "active";
-      break;
-    case step3:
-
-      break;
-
+      return;
+    }
+  }
   }
 }
